@@ -36,10 +36,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>17</release> <!-- Utiliser la version de release pour JDK 9 et au-delà -->
+                    <release>17</release>
                 </configuration>
             </plugin>
-            <!-- autres plugins -->
+
         </plugins>
     </build>
 
