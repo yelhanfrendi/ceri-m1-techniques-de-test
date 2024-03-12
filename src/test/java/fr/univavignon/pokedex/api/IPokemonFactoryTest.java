@@ -20,7 +20,7 @@ public class IPokemonFactoryTest {
     public void setUp() {
         pokemonFactory = Mockito.mock(IPokemonFactory.class);
         when(pokemonFactory.createPokemon(index, cp, hp, dust, candy))
-                .thenReturn(new Pokemon(index, "Btest", 50, 8, 50, cp, hp, dust, candy, iv));
+                .thenReturn(new Pokemon(index, "Btest", 50, 50, 50, cp, hp, dust, candy, iv));
     }
 
     @Test
