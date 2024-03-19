@@ -1,27 +1,36 @@
 version: 2.1
 
+
 orbs:
+  maven: circleci/maven@1.4.1
   codecov: codecov/codecov@4.0.1
 
 jobs:
-  build-and-test:
-
+  build:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: circleci/openjdk:17-ea-buster-node-browsers-legacy
+
     steps:
       - checkout
+
+
       - run:
-          name: Run Maven Test and generate coverage report
-          command: mvn test
+          name: Run Unit Tests
+          command: mvn test -X
       - run:
-          name: Upload coverage to Codecov
-          command: bash <(curl -fsSL https://codecov.io/bash)
+          name: Generate Coverage Report
+          command: mvn jacoco:report
+      - run:
+          name: Upload Coverage Report
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2
-  complete-workflow:
+  upload-to-codecov:
     jobs:
-      - build-and-test:
+      - build
+  maven_test:
+    jobs:
+      - build:
           filters:
             branches:
-              only: master
