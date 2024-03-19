@@ -27,12 +27,19 @@ public class Pokedex implements IPokedex{
     }
 
     @Override
-    public Pokemon getPokemon(int id) throws PokedexException {
-        return pokemons.get(id);
+    public Pokemon getPokemon(int id) throws PokedexException  {
+
+        for (Pokemon pokemon : pokemons) {
+            if (pokemon.getIndex() == id) {
+                return pokemon;}
+
+        }
+        throw new PokedexException("Ce pokemon n'existe pas");
     }
 
     @Override
     public List<Pokemon> getPokemons() {
+
         return this.pokemons;
     }
 
