@@ -9,3 +9,6 @@ Groupe : M1 alt AI
 
 ## Codecov
 [![codecov](https://codecov.io/gh/yelhanfrendi/ceri-m1-techniques-de-test/graph/badge.svg?token=TCMNFQ205U)](https://codecov.io/gh/yelhanfrendi/ceri-m1-techniques-de-test)
+
+## CheckStyle
+![CheckStyle](target/site/badges/checkstyle-result.svg)
