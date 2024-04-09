@@ -33,6 +33,7 @@ public class IPokedexTest {
 
     @Test
     public void getSize() {
+
         assertEquals(2, pokedex.size());
     }
 
